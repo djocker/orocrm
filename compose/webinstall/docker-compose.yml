@@ -19,7 +19,7 @@ mail:
     - maildomain=localhost
     - smtp_user=user@localhost:password
 web:
-  image: djocker/orobase
+  image: djocker/orocrm
   links:
     - "db"
     - "mail"
