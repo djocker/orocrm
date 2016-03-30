@@ -1,0 +1,4 @@
+*
+!.gitignore
+!sync.sh
+!config.sh
