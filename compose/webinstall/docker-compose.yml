@@ -28,8 +28,6 @@ web:
     - "8080:8080"
   volumes_from:
     - data
-  volumes:
-    - ./src:/var/www
   environment:
     - CMD_INIT_BEFORE=
     - CMD_INIT_CLEAN=

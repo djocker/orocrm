@@ -28,8 +28,6 @@ web:
     - "8080:8080"
   volumes_from:
     - data
-  volumes:
-    - ./src:/var/www
   environment:
     - CMD_INIT_BEFORE=
     - CMD_INIT_CLEAN=sudo -u www-data -E /usr/bin/php /var/www/app/console oro:install --timeout 3600 --force --drop-database --env=prod --user-name=admin --user-firstname=John --user-lastname=Doe --user-password="admin1111" --user-email="johndoe@example.com" --organization-name="Acme" --application-url="http://oro.loc/"
