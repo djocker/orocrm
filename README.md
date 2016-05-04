@@ -1,5 +1,5 @@
 # OroCRM Community Edition Monolithic Image
-The image includes nginx with php-fpm and wrappers. Mysql server and mail server will be provided by third party images.
+The docker image includes nginx with php-fpm and wrappers. Mysql server and mail server will be provided by third party images.
 
 ## Usage
 
