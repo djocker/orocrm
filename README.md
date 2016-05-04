@@ -3,6 +3,49 @@ The docker image includes nginx with php-fpm and wrappers. Mysql server and mail
 
 ## Usage
 
+**[Install docker compose](http://docs.docker.com/compose/install/)**
+
+```
+curl -o docker-compose -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m`
+chmod a+x docker-compose
+sudo mv docker-compose /usr/local/bin/
+```
+
+**OroCRM Stack with web installation wizard**
+
+run docker containers
+```
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/webinstall/docker-compose.yml) up
+```
+
+stop docker containers
+
+```
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/webinstall/docker-compose.yml) stop
+```
+
+**OroCRM Stack with automated installation**
+
+default login: `admin` default password: `admin1111`
+
+run docker containers
+
+```
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/autoinstall/docker-compose.yml) up
+```
+
+stop docker containers
+
+```
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/autoinstall/docker-compose.yml) stop 
+```
+
+## Docker Cloud
+
+Also you can use stack files from [stackfile.io](https://stackfiles.io/registry/56fc345c416a1001004d39cc) to deploy via [cloud.docker.com](https://cloud.docker.com)
+
+## Additional Info
+
 **Parameters.yml Variables:**
 
 `APP_DB_DRIVER=pdo_mysql`  
