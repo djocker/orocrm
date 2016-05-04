@@ -6,7 +6,7 @@ The docker image includes nginx with php-fpm and wrappers. Mysql server and mail
 **[Install docker compose](http://docs.docker.com/compose/install/)**
 
 ```
-curl -o docker-compose -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m`
+curl -o docker-compose -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m`
 chmod a+x docker-compose
 sudo mv docker-compose /usr/local/bin/
 ```
