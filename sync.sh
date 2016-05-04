@@ -15,7 +15,7 @@ if [[ ! -d ${WORKDIR} ]] || [[ ! -d ${WORKDIR}/.git ]]; then
     git --git-dir=${WORKDIR}/.git remote add origin ${APP_GIT_URI}
 fi
 
-git --git-dir=${WORKDIR}/.git pull
+git --git-dir=${WORKDIR}/.git pull origin master
 
 read -d '' dockerfile << EOF
 FROM djocker/orobase
