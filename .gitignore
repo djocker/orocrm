@@ -1,4 +1,2 @@
-*
-!.gitignore
-!sync.sh
-!config.sh
+application-git
+.idea
