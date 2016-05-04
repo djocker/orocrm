@@ -15,15 +15,19 @@ if [[ ! -d ${WORKDIR} ]] || [[ ! -d ${WORKDIR}/.git ]]; then
     git --git-dir=${WORKDIR}/.git remote add origin ${APP_GIT_URI}
 fi
 
+git --git-dir=${WORKDIR}/.git pull
+
 read -d '' dockerfile << EOF
 FROM djocker/orobase
 USER www-data
 
-# Build Args
-ENV MEMORY_LIMIT_CLI=2048
-ENV MEMORY_LIMIT_FPM=2048
-ENV UPLOAD_LIMIT=256
+# HTTPS or SSH
+# If you want to use ssh don't forget to provide ssh key via build arg directive
 ENV GIT_URI=%GIT_URI%
+
+# branch name or tag 
+# master - for master branch
+# tags/1.9.1 - for 1.9.1 tag 
 ENV GIT_REF=%GIT_REF%
 
 RUN install-application.sh
