@@ -24,7 +24,7 @@ web:
     - "db"
     - "mail"
   ports:
-    - "80:80"
+    - "3080:80"
     - "8080:8080"
   volumes_from:
     - data
