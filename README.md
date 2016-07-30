@@ -1,4 +1,4 @@
-# OROCrm source code image
+# OROCRM Docker Image
 The docker image contains source code of OROCrm application.
 This image are used as part of docker stack (see compose configs).
 
