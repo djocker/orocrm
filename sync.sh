@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Script for autosync tags with official oro repository
+
 cd `dirname $0` && DIR=$(pwd) && cd -
 WORKDIR="$DIR/application-git"
 . ${DIR}/config.sh
