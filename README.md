@@ -17,6 +17,7 @@ Run stack
 ```
 docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/webinstall/docker-compose.yml) up
 ```
+Navigate to [http://localhost:3080](http://localhost:3080) in your web browser, and install application via web wizard
 
 Stop stack
 
@@ -35,6 +36,7 @@ Run stack
 ```
 docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/autoinstall/docker-compose.yml) up
 ```
+Navigate to [http://localhost:3080](http://localhost:3080) in your web browser, and login
 
 Stop stack
 
