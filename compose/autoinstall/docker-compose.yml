@@ -1,5 +1,7 @@
 data:
   image: djocker/orodata
+source_code:
+  image: djocker/orocrm
 db:
   image: mysql:5.5
   expose:
@@ -18,8 +20,8 @@ mail:
   environment:
     - maildomain=localhost
     - smtp_user=user@localhost:password
-web:
-  image: djocker/orocrm
+minion:
+  image: djocker/oromono
   links:
     - "db"
     - "mail"
@@ -28,6 +30,7 @@ web:
     - "8080:8080"
   volumes_from:
     - data
+    - source_code
   environment:
     - CMD_INIT_BEFORE=
     - CMD_INIT_CLEAN=sudo -u www-data -E /usr/bin/php /var/www/app/console oro:install --timeout 3600 --force --drop-database --env=prod --user-name=admin --user-firstname=John --user-lastname=Doe --user-password="admin1111" --user-email="johndoe@example.com" --organization-name="Acme" --application-url="http://oro.loc/"
