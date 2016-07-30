@@ -10,7 +10,7 @@ This image are used as part of docker stack (see compose configs).
 ## Usage
 **OROCrm stack with web installation**
 
-For more information [see compose config](./compose/webinstall/docker-compose.yml)
+For more information [see compose config](compose/webinstall/docker-compose.yml)
 
 Run stack 
 
@@ -26,7 +26,7 @@ docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master
 
 **OROCrm stack with automated installation**
 
-For more information [see compose config](./compose/autoinstall/docker-compose.yml)
+For more information [see compose config](compose/autoinstall/docker-compose.yml)
 
 default login: `admin` default password: `admin1111`
 
