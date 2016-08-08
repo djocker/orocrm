@@ -1,7 +1,7 @@
 # OROCRM Docker Image
 [![GitHub tag](https://img.shields.io/github/tag/djocker/orocrm.svg?maxAge=2592000)](https://hub.docker.com/r/djocker/orocrm/tags/) [![Docker Pulls](https://img.shields.io/docker/pulls/djocker/orocrm.svg?maxAge=2592000)](https://hub.docker.com/r/djocker/orocrm/)  
 
-The docker image contains source code of OROCrm application.
+The docker image contains source code of OROCRM Community Edition.
 This image are used as part of docker stack (see compose configs).
 
 ## Requirements
