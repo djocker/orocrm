@@ -8,7 +8,7 @@ ENV GIT_URI=https://github.com/orocrm/crm-application.git
 # branch name or tag 
 # master - for master branch
 # tags/1.9.1 - for 1.9.1 tag 
-ENV GIT_REF=tags/1.9.7
+ENV GIT_REF=tags/1.10.4
 
 RUN install-application.sh
 
