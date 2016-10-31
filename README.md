@@ -12,19 +12,19 @@ This image are used as part of docker stack (see compose configs).
 ## Usage
 **OROCrm stack with web installation**
 
-For more information [see compose config](compose/webinstall/docker-compose.yml)
+For more information [see compose config](docker-compose.yml)
 
 Run stack 
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/webinstall/docker-compose.yml) up
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose.yml) up
 ```
 Navigate to [http://localhost:3080](http://localhost:3080) in your web browser, and install application via web wizard
 
 Stop stack
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/webinstall/docker-compose.yml) stop
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose.yml) stop
 ```
 
 **OROCrm stack with automated installation**
@@ -36,12 +36,12 @@ default login: `admin` default password: `admin1111`
 Run stack
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/autoinstall/docker-compose.yml) up
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose-auto.yml) up
 ```
 Navigate to [http://localhost:3080](http://localhost:3080) in your web browser, and login
 
 Stop stack
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/compose/autoinstall/docker-compose.yml) stop 
+docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose-auto.yml) stop 
 ```
