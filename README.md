@@ -1,8 +1,8 @@
 # OROCRM Docker Image
 [![GitHub tag](https://img.shields.io/github/tag/djocker/orocrm.svg?maxAge=2592000)](https://hub.docker.com/r/djocker/orocrm/tags/) [![Docker Pulls](https://img.shields.io/docker/pulls/djocker/orocrm.svg?maxAge=2592000)](https://hub.docker.com/r/djocker/orocrm/)  
 
-The docker image contains source code of OROCRM Community Edition.
-This image are used as part of docker stack (see compose configs).
+The docker image with source code of OroCRM application.
+This image is used as part of docker stack (see compose configs).
 
 ## Requirements
 
@@ -10,38 +10,59 @@ This image are used as part of docker stack (see compose configs).
 2. [Docker Compose](http://docs.docker.com/compose)
 
 ## Usage
-**OROCrm stack with web installation**
 
-For more information [see compose config](docker-compose.yml)
+### OroCRM stack with automated installation
 
-Run stack 
+Run containers in attached mode
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose.yml) up
+$ docker-compose -f docker-compose-auto.yml up
 ```
+
+Run containers in detached mode
+
+```
+$ docker-compose -f docker-compose-auto.yml up -d
+```
+
+_Navigate to [http://localhost:3080](http://localhost:3080) or [http://localhost:3080/admin](http://localhost/admin:3080) in your web browser (default admin login/password: admin / admin1111)_
+
+Stop containers
+
+```
+$ docker-compose -f docker-compose-auto.yml stop
+```
+
+Remove containers
+
+```
+$ docker-compose -f docker-compose-auto.yml down
+```
+
+### OroCRM stack with web installation
+
+Run containers in attached mode
+
+```
+$ docker-compose -f docker-compose.yml up
+```
+
+Run containers in detached mode
+
+```
+$ docker-compose -f docker-compose.yml up -d
+```
+
 Navigate to [http://localhost:3080](http://localhost:3080) in your web browser, and install application via web wizard
 
-Stop stack
+Stop containers
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose.yml) stop
+$ docker-compose -f docker-compose.yml stop
 ```
 
-**OROCrm stack with automated installation**
-
-For more information [see compose config](compose/autoinstall/docker-compose.yml)
-
-default login: `admin` default password: `admin1111`
-
-Run stack
+Remove containers
 
 ```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose-auto.yml) up
-```
-Navigate to [http://localhost:3080](http://localhost:3080) in your web browser, and login
-
-Stop stack
-
-```
-docker-compose -f <(curl https://raw.githubusercontent.com/djocker/orocrm/master/docker-compose-auto.yml) stop 
+$ docker-compose -f docker-compose.yml down
 ```
