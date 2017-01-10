@@ -27,7 +27,7 @@ minion:
     - "mail"
   ports:
     - "3080:80"
-    - "8080:8080"
+    - "3088:8080"
   volumes_from:
     - data
     - source_code
@@ -50,6 +50,6 @@ minion:
     - APP_MAILER_USER=user
     - APP_MAILER_PASSWORD=password
     - APP_WEBSOCKET_BACKEND_PORT=8080  
-    - APP_WEBSOCKET_FRONTEND_PORT=8080  
+    - APP_WEBSOCKET_FRONTEND_PORT=3088  
     - APP_SECRET=123456789  
     - APP_IS_INSTALLED=
