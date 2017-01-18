@@ -8,7 +8,7 @@ ARG GIT_URI="/home/scherepanov/watcher/orocrm/git-source"
 # branch name or tag 
 # master - for master branch
 # tags/1.9.1 - for 1.9.1 tag 
-ARG GIT_REF="tags/2.0.0"
+ARG GIT_REF="tags/2.0.0-rc.1"
 
 RUN install-application.sh
 
