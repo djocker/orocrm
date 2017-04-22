@@ -1,0 +1,12 @@
+imports:
+  - behat.yml.dist
+
+default: &default
+  extensions: &default_extensions
+      Behat\MinkExtension:
+          base_url: 'http://minion/'
+          default_session: 'first_session'
+          sessions:
+              first_session:
+                  oroSelenium2:
+                      wd_host: "http://phantomjs:8910/wd/hub"

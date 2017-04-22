@@ -1,0 +1,96 @@
+version: "2"
+services:
+  data:
+    container_name: app_data
+    image: djocker/orodata
+  source_code:
+    container_name: app_source
+    image: djocker/app
+  db:
+    container_name: app_db
+    image: mysql:5.5
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=appdb
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbpass
+    volumes_from:
+      - data
+    networks:
+      default:
+        aliases:
+          - db
+  mail:
+    container_name: app_mail
+    image: catatnight/postfix
+    expose:
+      - "25"
+    environment:
+      - maildomain=localhost
+      - smtp_user=user@localhost:password
+    networks:
+      default:
+        aliases:
+          - mail
+  minion:
+    container_name: app_minion
+    image: djocker/oromono
+    links:
+      - db
+      - mail
+    expose:
+      - "80"
+      - "8080"
+    ports:
+      - "3080:80"
+      - "8080:8080"
+    extra_hosts:
+     - minion:127.0.0.1
+    volumes:
+      - ./behat.yml:/var/www/behat.yml
+    volumes_from:
+      - data
+      - source_code
+    networks:
+      default:
+        aliases:
+          - minion
+    environment:
+      - CMD_INIT_BEFORE=
+      - CMD_INIT_CLEAN=
+      - CMD_INIT_INSTALLED=
+      - CMD_INIT_AFTER=
+      - APP_DB_DRIVER=pdo_mysql
+      - APP_DB_HOST=db
+      - APP_DB_PORT=3306
+      - APP_DB_USER=dbuser
+      - APP_DB_PASSWORD=dbpass
+      - APP_DB_NAME=appdb
+      - APP_HOSTNAME=localhost
+      - APP_MAILER_TRANSPORT=smtp
+      - APP_MAILER_HOST=mail
+      - APP_MAILER_PORT=25
+      - APP_MAILER_ENCRYPTION=
+      - APP_MAILER_USER=user
+      - APP_MAILER_PASSWORD=password
+      - APP_WEBSOCKET_BACKEND_PORT=8080  
+      - APP_WEBSOCKET_FRONTEND_PORT=8080  
+      - APP_SECRET=123456789  
+      - APP_IS_INSTALLED=
+  phantomjs:
+    container_name: app_phantomjs
+    image: wernight/phantomjs
+    command: phantomjs --webdriver=8910
+    expose:
+      - "8910"
+    links:
+      - minion
+    networks:
+      default:
+        aliases:
+          - phantomjs
+    volumes_from:
+      - data
+      - source_code
